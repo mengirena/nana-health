@@ -1,0 +1,201 @@
+/* styles.css — Kalos Trainer. Dark theme modeled on the Kalos app:
+   near-black background, dark rounded cards, white text,
+   green = completed/positive, blue = links/accents. */
+
+:root {
+  --bg: #0b0b0f;
+  --card: #1c1c22;
+  --card2: #26262e;
+  --text: #ffffff;
+  --muted: #9a9aa5;
+  --green: #30d158;
+  --blue: #0a84ff;
+  --red: #ff453a;
+  --line: #2c2c34;
+  --tabbar-h: 64px;
+}
+
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+html, body { margin: 0; padding: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  padding-bottom: calc(var(--tabbar-h) + env(safe-area-inset-bottom) + 12px);
+}
+
+main { max-width: 560px; margin: 0 auto; padding: 16px 16px 8px; }
+
+.page-title { font-size: 28px; font-weight: 700; margin: 10px 0 14px; }
+.section-title { font-size: 20px; font-weight: 700; margin: 24px 0 10px; }
+.muted { color: var(--muted); }
+.small { font-size: 13px; }
+.big-num { font-size: 19px; font-weight: 600; }
+
+/* ---------- cards ---------- */
+
+.card {
+  background: var(--card);
+  border-radius: 16px;
+  padding: 16px;
+  margin-bottom: 12px;
+}
+
+.session-card { cursor: pointer; }
+.session-card:active { background: var(--card2); }
+.session-card .wname { font-size: 19px; font-weight: 700; line-height: 1.3; }
+.session-card .wmeta { color: var(--muted); font-size: 14px; margin-top: 4px; }
+.session-card .row { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; }
+
+.check {
+  color: var(--green);
+  font-size: 22px; font-weight: 700; flex: none; line-height: 1;
+}
+.missed-x { color: var(--red); font-size: 20px; font-weight: 700; flex: none; line-height: 1; }
+
+.pill {
+  display: inline-block; font-size: 12px; font-weight: 600;
+  padding: 3px 9px; border-radius: 999px; margin-top: 8px;
+  background: var(--card2); color: var(--muted);
+}
+.pill.optional { color: var(--blue); }
+.pill.deload { color: #ffd60a; }
+.pill.moved { color: var(--green); }
+
+.rest-card {
+  border: 1.5px dashed var(--line);
+  border-radius: 16px;
+  padding: 16px;
+  margin-bottom: 12px;
+  color: var(--muted);
+  text-align: center;
+  font-size: 16px;
+}
+
+.streak-card { display: flex; align-items: center; gap: 12px; }
+.streak-card .flame { font-size: 26px; }
+.streak-text { font-size: 19px; font-weight: 700; }
+
+.nutrition-card { display: flex; justify-content: space-between; align-items: center; }
+.meal-btns { display: flex; gap: 10px; }
+.round-btn {
+  width: 44px; height: 44px; border-radius: 50%;
+  border: none; background: var(--card2); color: var(--text);
+  font-size: 24px; line-height: 1; cursor: pointer;
+}
+.round-btn:active { background: var(--line); }
+
+.note-card {
+  background: var(--card); border-left: 3px solid var(--blue);
+  border-radius: 10px; padding: 12px 14px; margin-bottom: 10px;
+  font-size: 14px; color: var(--text);
+}
+
+/* ---------- schedule ---------- */
+
+.week-title {
+  font-size: 17px; font-weight: 700; color: var(--text);
+  margin: 20px 0 10px;
+}
+.day-label {
+  color: var(--muted); font-size: 14px; font-weight: 600;
+  width: 44px; flex: none; text-align: center; line-height: 1.25;
+}
+.day-label .dnum { display: block; font-size: 16px; color: var(--text); }
+.day-row { display: flex; gap: 10px; align-items: stretch; }
+.day-row .grow { flex: 1; min-width: 0; }
+.day-row .session-card, .day-row .rest-card { margin-bottom: 10px; }
+.today-outline { outline: 2px solid var(--blue); outline-offset: -2px; }
+
+/* ---------- workout detail ---------- */
+
+.back-btn {
+  background: none; border: none; color: var(--blue);
+  font-size: 17px; padding: 6px 0; cursor: pointer;
+}
+.block-title {
+  font-size: 15px; font-weight: 700; color: var(--muted);
+  text-transform: uppercase; letter-spacing: 0.06em;
+  margin: 20px 0 8px;
+}
+.ex-row {
+  display: flex; align-items: center; gap: 10px;
+  background: var(--card); border-radius: 12px;
+  padding: 12px 14px; margin-bottom: 8px;
+}
+.ex-info { flex: 1; min-width: 0; }
+.ex-name { font-size: 16px; font-weight: 600; }
+.ex-sets-label { color: var(--muted); font-size: 13px; margin-top: 2px; }
+.set-boxes { display: flex; gap: 6px; flex: none; }
+.set-box {
+  width: 30px; height: 30px; border-radius: 8px;
+  border: 1.5px solid var(--line); background: transparent;
+  color: var(--green); font-size: 16px; cursor: pointer; padding: 0;
+}
+.set-box.on { background: rgba(48, 209, 88, 0.18); border-color: var(--green); }
+
+.complete-btn {
+  display: block; width: 100%; margin: 22px 0 10px;
+  padding: 16px; border: none; border-radius: 14px;
+  background: #f5f5f7; color: #111; font-size: 17px; font-weight: 700;
+  cursor: pointer;
+}
+.complete-btn.done { background: var(--green); color: #06270f; }
+
+.placeholder-note {
+  background: rgba(255, 214, 10, 0.12);
+  border: 1px solid rgba(255, 214, 10, 0.45);
+  color: #ffd60a; border-radius: 12px;
+  padding: 12px 14px; font-size: 14px; margin: 12px 0;
+}
+
+/* ---------- progress ---------- */
+
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.stat-card { background: var(--card); border-radius: 16px; padding: 14px 16px; }
+.stat-label { color: var(--muted); font-size: 12px; font-weight: 600; letter-spacing: 0.05em; }
+.stat-value { font-size: 26px; font-weight: 700; margin-top: 4px; }
+.stat-delta { font-size: 14px; font-weight: 600; margin-top: 2px; }
+.delta-good { color: var(--green); }
+.delta-bad { color: var(--red); }
+.delta-flat { color: var(--muted); }
+
+.strength-row {
+  display: flex; justify-content: space-between; align-items: baseline;
+  padding: 10px 0; border-bottom: 1px solid var(--line);
+}
+.strength-row:last-child { border-bottom: none; }
+.strength-name { font-size: 16px; font-weight: 600; }
+.strength-val { font-size: 16px; font-weight: 700; white-space: nowrap; }
+.strength-val .up { color: var(--green); font-size: 14px; margin-left: 6px; }
+
+.ss-row { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; }
+.ss-row .edit-link { color: var(--blue); background: none; border: none; font-size: 15px; cursor: pointer; }
+
+/* ---------- coach ---------- */
+
+.coach-name { font-size: 20px; font-weight: 700; margin-bottom: 6px; }
+.coach-note-title { font-size: 17px; font-weight: 700; margin-bottom: 8px; }
+.notes-list { margin: 0; padding-left: 20px; color: var(--text); }
+.notes-list li { margin-bottom: 6px; }
+
+/* ---------- tab bar ---------- */
+
+.tabbar {
+  position: fixed; left: 0; right: 0; bottom: 0;
+  height: calc(var(--tabbar-h) + env(safe-area-inset-bottom));
+  padding-bottom: env(safe-area-inset-bottom);
+  background: rgba(18, 18, 24, 0.96);
+  border-top: 1px solid var(--line);
+  display: flex; z-index: 10;
+}
+.tab {
+  flex: 1; background: none; border: none; cursor: pointer;
+  color: var(--muted); font-size: 12px; font-weight: 600;
+  display: flex; flex-direction: column; align-items: center;
+  justify-content: center; gap: 3px;
+}
+.tab .tab-ico { font-size: 20px; }
+.tab.active { color: var(--text); }

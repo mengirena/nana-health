@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+  <meta name="theme-color" content="#0b0b0f" />
+  <title>Nana Health</title>
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="icons/icon.svg" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Nana" />
+  <link rel="stylesheet" href="styles.css?v=1" />
+</head>
+<body>
+  <main id="appMain">
+    <!-- TODAY -->
+    <section id="view-today" class="view">
+      <h1 class="page-title">Today's workout</h1>
+      <div id="todayMain"></div>
+      <div id="todaySecondary"></div>
+      <div class="card streak-card">
+        <span class="flame">🔥</span>
+        <div>
+          <div id="streakText" class="streak-text">—</div>
+          <div class="muted small">consecutive scheduled main sessions completed</div>
+        </div>
+      </div>
+      <h2 class="section-title">Nutrition</h2>
+      <div class="card nutrition-card">
+        <div>
+          <div id="mealsText" class="big-num">0 meals logged</div>
+          <div class="muted small">today · tap + when you log a meal in the food log</div>
+        </div>
+        <div class="meal-btns">
+          <button id="mealMinus" class="round-btn" aria-label="Remove a meal">−</button>
+          <button id="mealPlus" class="round-btn" aria-label="Add a meal">+</button>
+        </div>
+      </div>
+      <div id="todayNotes"></div>
+    </section>
+
+    <!-- SCHEDULE -->
+    <section id="view-schedule" class="view" hidden>
+      <h1 class="page-title">Schedule</h1>
+      <div id="scheduleList"></div>
+    </section>
+
+    <!-- PROGRESS -->
+    <section id="view-progress" class="view" hidden>
+      <h1 class="page-title">Progress</h1>
+      <h2 class="section-title">Body composition</h2>
+      <div id="bodyCompGrid" class="grid2"></div>
+      <div id="scanMeta" class="muted small"></div>
+      <h2 class="section-title">Strength</h2>
+      <div class="card" id="strengthCard"></div>
+      <h2 class="section-title">Sleep &amp; steps</h2>
+      <div class="card" id="sleepStepsCard"></div>
+    </section>
+
+    <!-- COACH -->
+    <section id="view-coach" class="view" hidden>
+      <h1 class="page-title">Coach</h1>
+      <div class="card">
+        <div class="coach-name">Nicole</div>
+        <p class="muted">Your Kalos coach. In-app messaging isn't part of this
+        v1 — this tab is a placeholder for coaching notes.</p>
+      </div>
+      <div class="card">
+        <div class="coach-note-title">Coaching notes</div>
+        <ul class="notes-list">
+          <li>Bone density is judged on 3–6 month trends, not month to month.</li>
+          <li>Protein target: 90 g/day.</li>
+          <li>Phase 2 focus: strength + hypertrophy, dumbbells only.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- WORKOUT DETAIL (overlay view, opened from Today / Schedule) -->
+    <section id="view-workout" class="view" hidden>
+      <button id="workoutBack" class="back-btn">‹ Back</button>
+      <h1 class="page-title" id="workoutTitle"></h1>
+      <div class="muted" id="workoutMeta"></div>
+      <div id="workoutPlaceholderNote"></div>
+      <div id="workoutBlocks"></div>
+      <button id="completeBtn" class="complete-btn"></button>
+    </section>
+  </main>
+
+  <nav class="tabbar">
+    <button class="tab active" data-view="today"><span class="tab-ico">☀️</span>Today</button>
+    <button class="tab" data-view="schedule"><span class="tab-ico">🗓️</span>Schedule</button>
+    <button class="tab" data-view="progress"><span class="tab-ico">📊</span>Progress</button>
+    <button class="tab" data-view="coach"><span class="tab-ico">💬</span>Coach</button>
+  </nav>
+
+  <script src="curate.js?v=1"></script>
+  <script src="app.js?v=1"></script>
+</body>
+</html>

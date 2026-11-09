@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="112" fill="#1c1c22"/>
+  <!-- dumbbell -->
+  <g fill="#30d158">
+    <rect x="216" y="226" width="80" height="60" rx="10"/>
+    <rect x="176" y="196" width="34" height="120" rx="10"/>
+    <rect x="302" y="196" width="34" height="120" rx="10"/>
+    <rect x="128" y="216" width="30" height="80" rx="10"/>
+    <rect x="354" y="216" width="30" height="80" rx="10"/>
+  </g>
+</svg>
