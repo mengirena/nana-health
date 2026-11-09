@@ -4,8 +4,9 @@ A personal, single-user training web app modeled on the Kalos Health app
 Irena uses — same shape as her flashcard app: a no-build-step static PWA
 in `docs/`, served by GitHub Pages, all state in `localStorage`.
 
-**Status: v1, built locally only.** Not yet pushed to GitHub — publishing
-needs a new repo under her account plus her approval.
+**Status: v1, published 2026-11-09** at
+https://github.com/mengirena/nana-health — one step remains: enable
+GitHub Pages (repo Settings → Pages → deploy from `main`, `/docs`).
 
 ## What it does
 

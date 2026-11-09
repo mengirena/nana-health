@@ -262,6 +262,8 @@ video assets (demo videos are links/placeholders in our app).
   Friday HIIT B list, and two cut-off details from the P2 C list (the
   exercise at 10 lb / 8–10 reps, and the timed stretch just above
   Seated Pigeon).
-- **Publishing**: create a GitHub repo under her account (name TBD),
-  push `docs/` with her approval, enable GitHub Pages — same flow as
-  the EngFlashcard app. Nothing is published yet.
+- **Publishing**: DONE 2026-11-09 — repo
+  https://github.com/mengirena/nana-health (public; name chosen by
+  Irena: "Nana health"), v1 snapshot pushed to `main` with her
+  approval (initial commit f1a893c). Remaining: enable GitHub Pages
+  (repo Settings → Pages → deploy from `main`, `/docs` folder).
