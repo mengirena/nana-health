@@ -265,5 +265,6 @@ video assets (demo videos are links/placeholders in our app).
 - **Publishing**: DONE 2026-11-09 — repo
   https://github.com/mengirena/nana-health (public; name chosen by
   Irena: "Nana health"), v1 snapshot pushed to `main` with her
-  approval (initial commit f1a893c). Remaining: enable GitHub Pages
-  (repo Settings → Pages → deploy from `main`, `/docs` folder).
+  approval (initial commit f1a893c). GitHub Pages enabled the same
+  day (deploy from `main`, `/docs`) — live at
+  https://mengirena.github.io/nana-health/
