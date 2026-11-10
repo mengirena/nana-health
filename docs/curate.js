@@ -26,12 +26,13 @@
  *       The original slot becomes a rest day. A session is only moved if
  *       the same workout is not already scheduled before the target day
  *       (it "comes around again" in the rotation anyway).
- *       Note on density: with mains on Sun/Tue/Thu, almost every rest day
- *       borders a main session, so most misses cannot be moved without
- *       breaking (b)/(c) — e.g. a missed Thursday session can land on
- *       Friday (its own vacated slot stops blocking), but a missed Sunday
- *       session has no legal landing spot. Unmovable misses are reported
- *       in the notes, never silently dropped and never forced in.
+ *       Note on density: with mains on Tue/Thu/Sat, most rest days
+ *       border a main session, so many misses cannot be moved without
+ *       breaking (b)/(c) — a missed Tuesday can land on Monday and a
+ *       missed Saturday on Sunday, but a missed Thursday has no legal
+ *       landing spot (Wednesday touches Tuesday, Friday touches
+ *       Saturday). Unmovable misses are reported in the notes, never
+ *       silently dropped and never forced in.
  *   (b) Never schedule two main sessions on adjacent days.
  *   (c) Keep at least one rest day between main sessions. (Same constraint
  *       as (b), phrased the way a coach would say it; both are enforced by

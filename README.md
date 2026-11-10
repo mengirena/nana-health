@@ -36,13 +36,18 @@ Phase 2 pattern (from Irena's Kalos screenshots, 2026-11-08):
 
 | Day | Main | Secondary |
 |---|---|---|
-| Sun | Prime C | — |
+| Sun | rest | — |
 | Mon | rest | — |
 | Tue | Prime A | Static Stretches |
 | Wed | rest | — |
 | Thu | Prime B | Static Stretches |
 | Fri | — | Full Body HIIT I B (optional) |
-| Sat | — | Static Stretches (cool-down) |
+| Sat | Prime C | Static Stretches |
+
+(Corrected 2026-11-09 by Irena: her training days are usually Tue /
+Thu / Sat. The Sun Nov 8 Prime C in her Kalos screenshots was
+Saturday's session dragged to Sunday — Kalos weeks can look shifted
+because sessions drag between days.)
 
 Prime C and Static Stretches are transcribed in full (16 exercises /
 30 sets, and 10 exercises / 21 sets). Prime A, Prime B and HIIT B are
@@ -67,9 +72,9 @@ adjusted plan + plain-language notes). Rules:
 - **(d)** Every 4th week of the phase is flagged as a deload-suggestion
   week (flag only).
 
-Because the Sun/Tue/Thu pattern is dense, most rest days border a main
-session — so a Thursday miss can move to Friday, but a Sunday miss has
-no legal landing spot. The header comment in `curate.js` marks exactly
+Because the Tue/Thu/Sat pattern is dense, most rest days border a main
+session — a Tuesday miss can move to Monday and a Saturday miss to
+Sunday, but a Thursday miss has no legal landing spot. The header comment in `curate.js` marks exactly
 where a future LLM curation call will replace/augment these rules (same
 input/output shape, with the rules kept as safety checks).
 

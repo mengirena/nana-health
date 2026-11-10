@@ -35,11 +35,16 @@ video assets (demo videos are links/placeholders in our app).
 - Programmes run in **phases** (Phase 1: Sep–Oct 2026; Phase 2: from
   ~2026-11-01). A phase has a weekly pattern and a set of workout
   templates; exercise history carries across phases.
-- Weekly pattern (Phase 2):
-  - Sun — Prime C (main) · Mon — Rest · Tue — Prime A (main) + Static
-    Stretches · Wed — Rest · Thu — Prime B (main) + Static Stretches
-  - Fri — Full Body HIIT I B (secondary, optional) · Sat — Static
-    Stretches (secondary)
+- Weekly pattern (Phase 2) — corrected by Irena 2026-11-09 (her
+  training days are usually Tue / Thu / Sat; the Sun Nov 8 Prime C in
+  the screenshots was Saturday's session dragged to Sunday):
+  - Tue — Prime A (main) + Static Stretches · Thu — Prime B (main) +
+    Static Stretches · Sat — Prime C (main) + Static Stretches
+  - Fri — Full Body HIIT I B (secondary, optional) · Sun / Mon / Wed —
+    Rest
+  - The A → B → C rotation aligns to Tue / Thu / Sat; because
+    sessions drag between days (§4.2), any given week in Kalos can
+    look shifted — the pattern is the anchor, drags are exceptions.
 - Workout template anatomy (Prime sessions): Warm-up block (4 mobility
   exercises, 1 set each) → Main block (5 lifts, 3–4 sets) → Accessories
   (3 exercises, 2 sets) → Finishers (timed stretches, 30 s holds).
@@ -229,15 +234,26 @@ video assets (demo videos are links/placeholders in our app).
 - Manual moves (§4.2) sit above curation: a per-date session list
   saved by a drag overrides the curated result for that date, and
   curation never fights a user move.
-- Known limitation (found in v1 testing): with mains fixed Sun/Tue/
-  Thu, most rest days border a main session, so most missed sessions
-  cannot legally move (a missed Thu B can slide to Fri; a missed Sun C
-  cannot land anywhere).
+- Known limitation (found in v1 testing): with mains fixed Tue/Thu/
+  Sat, most rest days border a main session, so many missed sessions
+  cannot legally move (a missed Tue can land on Mon and a missed Sat
+  on Sun, but a missed Thu has no legal landing spot — Wed touches
+  Tue, Fri touches Sat).
 - AI-layer roadmap (the hook is marked in `curate.js`): rotation-shift
   rescheduling (shift the whole A/B/C sequence when a session is
   missed), weight-progression suggestions from History (e.g. all sets
   at the top of the rep range → suggest the next weight), and phase
   transitions. This is the part Irena asked to be AI-powered.
+- **AI menu builder (Irena's direction, 2026-11-09)**: the AI should
+  also compose the training menu itself, following the observed
+  pattern — session anatomy (§3), the A/B/C rotation, an exercise
+  pool drawn from her captured History, starting weights from her
+  last logged performances, dumbbells + flat bench only, and her
+  goals (fat loss + bone density → keep the heavy compound lifts
+  loaded). Menus are proposed to Irena for approval, then loaded as
+  templates. First proposal (AI-composed Prime A and Prime B +
+  the Nov 10–22 schedule): `AI-MENU-PROPOSAL.md`, mirrored as a
+  Google Doc in the "Kalos Trainer App" Drive folder.
 
 ## 7. Data model (summary)
 
