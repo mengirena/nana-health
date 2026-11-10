@@ -300,6 +300,17 @@ video assets (demo videos are links/placeholders in our app).
   implemented and published ahead of the rest of v2 — ≡ handle drag
   between days, per-date overrides in state, main-for-main swap, and
   missed ✕ extended to secondary sessions.
+- **Instruction videos (2026-11-09, at Irena's request)**: the guide
+  view's media panel embeds a YouTube form tutorial per exercise
+  (thumbnail facade → youtube-nocookie player on tap; also in the
+  How-to sheet). 22 exercises covered — every lift plus the main
+  mobility/stretch movements; every video ID was verified against
+  YouTube's oEmbed endpoint before shipping. Known imperfect matches,
+  flagged in the data: the Prone Row video demos the same
+  chest-supported row on a slight incline (no verified flat-bench
+  tutorial exists), and the Seated Pigeon video teaches the yoga
+  variant rather than the floor figure-4. Kalos's own videos remain
+  uncopied, per §1.
 - **v2 guided workout (2026-11-09, built at Irena's direction)**:
   session card → overview with a pinned **Start workout** button →
   focus view that moves exercise to exercise: progress dots,
