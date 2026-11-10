@@ -1,9 +1,9 @@
 /* sw.js — network-first with cache fallback (offline works, never serves stale).
    Online: always fetch fresh and update the cache. Offline: serve last cached copy. */
-var CACHE = 'kalos-trainer-v5';
+var CACHE = 'kalos-trainer-v6';
 var SHELL = [
   './', './index.html',
-  './styles.css?v=5', './app.js?v=5', './curate.js?v=5',
+  './styles.css?v=6', './app.js?v=6', './curate.js?v=6',
   './manifest.webmanifest', './icons/icon.svg', './data/program.json'
 ];
 

@@ -11,7 +11,7 @@
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <meta name="apple-mobile-web-app-title" content="Nana" />
-  <link rel="stylesheet" href="styles.css?v=5" />
+  <link rel="stylesheet" href="styles.css?v=6" />
 </head>
 <body>
   <main id="appMain">
@@ -100,7 +100,7 @@
         <div id="guideTimer" class="guide-timer">0:00</div>
       </div>
       <div id="guideDots" class="guide-dots"></div>
-      <div class="guide-media"><div class="guide-media-ico">🏋️</div></div>
+      <div class="guide-media" id="guideMedia"><div class="guide-media-ph"><div class="guide-media-ico">🏋️</div></div></div>
       <div class="guide-ex-head">
         <h1 class="guide-ex-name" id="guideExName"></h1>
         <button id="guideHowto" class="howto-btn" aria-label="How to">ⓘ</button>
@@ -136,6 +136,7 @@
         <div id="howtoTitle" class="sheet-title"></div>
         <button id="howtoClose" class="sheet-close" aria-label="Close">✕</button>
       </div>
+      <div id="howtoVideo"></div>
       <ul id="howtoList" class="howto-list"></ul>
       <p class="muted small">Demo videos aren't copied from Kalos — this is the text version.</p>
     </div>
@@ -155,7 +156,7 @@
     <button class="tab" data-view="coach"><span class="tab-ico">💬</span>Coach</button>
   </nav>
 
-  <script src="curate.js?v=5"></script>
-  <script src="app.js?v=5"></script>
+  <script src="curate.js?v=6"></script>
+  <script src="app.js?v=6"></script>
 </body>
 </html>
