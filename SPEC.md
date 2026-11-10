@@ -289,6 +289,13 @@ video assets (demo videos are links/placeholders in our app).
 - **v1 (built 2026-11-08, verified locally)**: Today, Schedule
   (14-day generation + curation v1 rules), Workout detail with set
   checkboxes and completion logging, Progress, Coach placeholder.
+- **v1.2 (2026-11-09)**: set / rep / weight views in the workout
+  screen — each exercise shows sets × reps plus its target weight
+  (a structured `weightLb` in the data; the Dumbbell Floor Press has
+  none), and every non-timed exercise gets the Kalos-style set table
+  (# / LB / REPS / ✓) with LB prefilled from the target weight and
+  typed values persisted per set. Still v2: prefill from the last
+  session's actuals, the numeric keypad, and the rest timer.
 - **v1.1 (2026-11-09)**: drag-and-drop schedule moves (§4.2)
   implemented and published ahead of the rest of v2 — ≡ handle drag
   between days, per-date overrides in state, main-for-main swap, and

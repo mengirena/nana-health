@@ -213,3 +213,20 @@ main { max-width: 560px; margin: 0 auto; padding: 16px 16px 8px; }
 }
 .day-drop { border-radius: 14px; }
 .day-drop.drop-hot { outline: 2px dashed #4da3ff; outline-offset: 3px; }
+
+/* Set table — set # / LB / REPS / done (v1.2, 2026-11-09) */
+.set-table { margin: 0 0 14px; }
+.set-head, .set-row {
+  display: grid; grid-template-columns: 30px 1fr 1fr 44px;
+  gap: 8px; align-items: center;
+}
+.set-head { color: var(--muted); font-size: 12px; letter-spacing: .06em; padding: 2px 0 4px; }
+.set-row { padding: 4px 2px; border-radius: 10px; }
+.set-row.done { background: rgba(52, 199, 123, .16); }
+.set-num { color: var(--muted); text-align: center; font-weight: 600; }
+.set-in {
+  background: var(--card2); border: 1px solid #33333d; color: #fff;
+  border-radius: 8px; padding: 8px 4px; font-size: 16px; width: 100%;
+  box-sizing: border-box; text-align: center;
+}
+.set-row .set-box { justify-self: center; }
