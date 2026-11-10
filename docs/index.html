@@ -11,7 +11,7 @@
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <meta name="apple-mobile-web-app-title" content="Nana" />
-  <link rel="stylesheet" href="styles.css?v=3" />
+  <link rel="stylesheet" href="styles.css?v=4" />
 </head>
 <body>
   <main id="appMain">
@@ -84,9 +84,68 @@
       <div class="muted" id="workoutMeta"></div>
       <div id="workoutPlaceholderNote"></div>
       <div id="workoutBlocks"></div>
+      <button id="startBtn" class="start-btn">Start workout</button>
       <button id="completeBtn" class="complete-btn"></button>
     </section>
+
+    <!-- GUIDED WORKOUT (focus view, opened via Start workout) -->
+    <section id="view-guide" class="view" hidden>
+      <div class="guide-top">
+        <button id="guideBack" class="back-btn">‹</button>
+        <div class="guide-title-wrap">
+          <div id="guideWorkoutName" class="guide-wname"></div>
+          <div id="guideProgressText" class="muted small"></div>
+        </div>
+        <div id="guideTimer" class="guide-timer">0:00</div>
+      </div>
+      <div id="guideDots" class="guide-dots"></div>
+      <div class="guide-media"><div class="guide-media-ico">🏋️</div></div>
+      <div class="guide-ex-head">
+        <h1 class="guide-ex-name" id="guideExName"></h1>
+        <button id="guideHowto" class="howto-btn" aria-label="How to">ⓘ</button>
+      </div>
+      <div class="muted" id="guideExMeta"></div>
+      <div id="guideExNote" class="guide-note"></div>
+      <div id="guideSets"></div>
+      <div id="restPanel" class="rest-panel" hidden>
+        <div id="restLabel" class="rest-label">Rest</div>
+        <div id="restTime" class="rest-time">1:30</div>
+        <div class="rest-btns">
+          <button id="restMinus" class="rest-btn">−30s</button>
+          <button id="restSkip" class="rest-btn">Skip</button>
+          <button id="restPlus" class="rest-btn">+30s</button>
+        </div>
+      </div>
+      <div class="guide-nav">
+        <button id="guidePrev" class="nav-btn">‹ Prev</button>
+        <button id="guideNext" class="nav-btn">Next ›</button>
+      </div>
+      <div class="guide-actions">
+        <button id="guidePause" class="action-btn">⏸ Pause</button>
+        <button id="guideFinish" class="action-btn finish">Finish workout</button>
+        <button id="guideDiscard" class="action-btn discard">Discard</button>
+      </div>
+    </section>
   </main>
+
+  <!-- HOW-TO SHEET -->
+  <div id="howtoSheet" class="sheet" hidden>
+    <div class="sheet-card">
+      <div class="sheet-head">
+        <div id="howtoTitle" class="sheet-title"></div>
+        <button id="howtoClose" class="sheet-close" aria-label="Close">✕</button>
+      </div>
+      <ul id="howtoList" class="howto-list"></ul>
+      <p class="muted small">Demo videos aren't copied from Kalos — this is the text version.</p>
+    </div>
+  </div>
+
+  <!-- RESUME BAR (workout in progress) -->
+  <div id="resumeBar" class="resume-bar" hidden>
+    <span id="resumeText">Workout in progress</span>
+    <button id="resumeBtn" class="resume-btn">Resume</button>
+    <button id="resumeDiscard" class="resume-x" aria-label="Discard workout">✕</button>
+  </div>
 
   <nav class="tabbar">
     <button class="tab active" data-view="today"><span class="tab-ico">☀️</span>Today</button>
@@ -95,7 +154,7 @@
     <button class="tab" data-view="coach"><span class="tab-ico">💬</span>Coach</button>
   </nav>
 
-  <script src="curate.js?v=3"></script>
-  <script src="app.js?v=3"></script>
+  <script src="curate.js?v=4"></script>
+  <script src="app.js?v=4"></script>
 </body>
 </html>

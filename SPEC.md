@@ -300,6 +300,18 @@ video assets (demo videos are links/placeholders in our app).
   implemented and published ahead of the rest of v2 — ≡ handle drag
   between days, per-date overrides in state, main-for-main swap, and
   missed ✕ extended to secondary sessions.
+- **v2 guided workout (2026-11-09, built at Irena's direction)**:
+  session card → overview with a pinned **Start workout** button →
+  focus view that moves exercise to exercise: progress dots,
+  elapsed timer, per-exercise instruction bullets (ⓘ How-to sheet;
+  authored text cues — Kalos demo videos are not copied), the set
+  table with editable LB/REPS, auto-advance when an exercise is
+  completed, a 90-second rest timer (−30s / +30s / Skip, "Time for
+  your next set!" at zero), pause/resume with a persistent
+  in-progress bar above the tabs, and Finish/Discard. Still
+  outstanding from the v2 list below: prefill from the last session's
+  actual values, the big numeric keypad, PB detection + banner,
+  per-exercise History pages, the swap flow, and swipe-to-finish.
 - **v2 adds (from this finalized spec)**: guided in-workout view with
   continuous scroll, numeric keypad entry, prefill-from-last-time,
   weight carry-down, green-row logging with auto-advance, rest timer

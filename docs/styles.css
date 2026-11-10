@@ -230,3 +230,82 @@ main { max-width: 560px; margin: 0 auto; padding: 16px 16px 8px; }
   box-sizing: border-box; text-align: center;
 }
 .set-row .set-box { justify-self: center; }
+
+/* Guided workout (v2, 2026-11-09) */
+.start-btn {
+  width: 100%; padding: 15px; margin: 14px 0 8px; border: none; border-radius: 14px;
+  background: var(--green, #30d158); color: #06130a; font-size: 17px; font-weight: 700; cursor: pointer;
+}
+.guide-top { display: flex; align-items: center; gap: 10px; }
+.guide-title-wrap { flex: 1; min-width: 0; }
+.guide-wname { font-size: 17px; font-weight: 700; }
+.guide-timer { font-size: 20px; font-weight: 700; font-variant-numeric: tabular-nums; }
+.guide-dots { display: flex; gap: 5px; flex-wrap: wrap; margin: 12px 0; }
+.guide-dots .dot {
+  width: 10px; height: 10px; border-radius: 50%; border: none; padding: 0;
+  background: #3a3a44; cursor: pointer;
+}
+.guide-dots .dot.done { background: var(--green, #30d158); }
+.guide-dots .dot.cur { outline: 2px solid #fff; outline-offset: 1px; }
+.guide-media {
+  background: linear-gradient(145deg, #1c1c22, #26262e); border-radius: 18px;
+  height: 190px; display: flex; align-items: center; justify-content: center; margin-bottom: 14px;
+}
+.guide-media-ico { font-size: 64px; opacity: .85; }
+.guide-ex-head { display: flex; align-items: flex-start; gap: 8px; }
+.guide-ex-name { font-size: 24px; font-weight: 800; line-height: 1.25; margin: 0; flex: 1; }
+.howto-btn {
+  background: var(--card2); color: #fff; border: 1px solid #33333d; border-radius: 50%;
+  width: 34px; height: 34px; font-size: 17px; cursor: pointer; flex: none;
+}
+.guide-note { color: var(--muted); font-size: 14px; margin: 6px 0 2px; }
+.guide-nav { display: flex; justify-content: space-between; margin: 6px 0 12px; }
+.nav-btn {
+  background: var(--card2); color: #fff; border: 1px solid #33333d; border-radius: 10px;
+  padding: 10px 16px; font-size: 15px; cursor: pointer;
+}
+.nav-btn:disabled { opacity: .35; }
+.guide-actions { display: flex; gap: 8px; }
+.action-btn {
+  flex: 1; padding: 13px 6px; border-radius: 12px; border: 1px solid #33333d;
+  background: var(--card2); color: #fff; font-size: 15px; font-weight: 600; cursor: pointer;
+}
+.action-btn.finish { background: var(--green, #30d158); color: #06130a; border: none; }
+.action-btn.discard { color: var(--red, #ff453a); flex: 0 0 92px; }
+.rest-panel {
+  background: #14251a; border: 1px solid #245636; border-radius: 14px;
+  padding: 12px; margin: 10px 0; text-align: center;
+}
+.rest-label { color: #7ee2a0; font-weight: 700; }
+.rest-time { font-size: 34px; font-weight: 800; font-variant-numeric: tabular-nums; margin: 2px 0 8px; }
+.rest-btns { display: flex; gap: 8px; justify-content: center; }
+.rest-btn {
+  background: var(--card2); color: #fff; border: 1px solid #33333d; border-radius: 9px;
+  padding: 8px 14px; font-size: 14px; cursor: pointer;
+}
+.resume-bar {
+  position: fixed; left: 10px; right: 10px; bottom: 76px; z-index: 40;
+  background: #1f2a22; border: 1px solid #2c4634; border-radius: 12px;
+  display: flex; align-items: center; gap: 10px; padding: 10px 12px;
+  font-size: 14px; font-weight: 600;
+}
+.resume-bar[hidden] { display: none; }
+.resume-btn {
+  margin-left: auto; background: var(--green, #30d158); color: #06130a; border: none;
+  border-radius: 9px; padding: 7px 12px; font-weight: 700; cursor: pointer;
+}
+.resume-x { background: none; border: none; color: var(--muted); font-size: 16px; cursor: pointer; }
+.sheet {
+  position: fixed; inset: 0; z-index: 50; background: rgba(0,0,0,.6);
+  display: flex; align-items: flex-end; justify-content: center;
+}
+.sheet[hidden] { display: none; }
+.sheet-card {
+  background: #17171d; border-radius: 18px 18px 0 0; padding: 18px; width: 100%;
+  max-width: 560px; max-height: 78vh; overflow-y: auto;
+}
+.sheet-head { display: flex; align-items: flex-start; gap: 10px; }
+.sheet-title { font-size: 19px; font-weight: 700; flex: 1; }
+.sheet-close { background: var(--card2); border: none; color: #fff; border-radius: 50%; width: 30px; height: 30px; cursor: pointer; }
+.howto-list { margin: 12px 0; padding-left: 20px; line-height: 1.55; }
+.howto-list li { margin-bottom: 6px; }
