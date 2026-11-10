@@ -52,9 +52,10 @@ video assets (demo videos are links/placeholders in our app).
   Static Stretches: Cool-Down (10 exercises, 21 sets) — see
   `docs/data/program.json`. Prime A and Prime B are AI-composed
   (§6, approved and loaded 2026-11-09) until Irena walks through
-  Nicole's real lists and we diff them; HIIT B is still a structured
-  placeholder. Also noted: the Dumbbell Floor Press carries no
-  weight in Kalos (Irena, 2026-11-09).
+  Nicole's real lists and we diff them; HIIT B was AI-composed the
+  same way at Irena's request (2026-11-09) and loaded too. Also
+  noted: the Dumbbell Floor Press carries no weight in Kalos
+  (Irena, 2026-11-09).
 - Equipment reality: dumbbells + flat bench only. Standing swap:
   Incline Dumbbell Row → Prone Dumbbell Row (flat bench), same 3×10
   (decided 2026-11-08, note stored on the exercise).

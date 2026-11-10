@@ -85,6 +85,28 @@ Finishers (0:30 each, rotated for variety from your cool-down
 library): Child's Pose · Seated Pigeon Stretch · Lying Knees to
 Chest · Standing Quad Stretch
 
+## Full Body HIIT I B (AI-composed, added 2026-11-09 at your request)
+
+Your optional Friday secondary — the one you did in Kalos on Nov 6
+as a light training day. Interval format, built only from movements
+already in your pool, at light weights:
+
+Warm-up: Cat Cow 1×10 · Quadruped Thoracic Rotation 1×8 ·
+Bodyweight Glute Bridge 1×12
+
+Circuit — 3 rounds, 40 seconds work / 20 seconds rest:
+- Dumbbell Goblet Squat @ 20 lb
+- Dumbbell Romanian Deadlift @ 30 lb (steady hinge, not rushed)
+- Bent-Over Row @ 20 lb
+- Dumbbell Shoulder Press @ 10 lb, standing
+- Plank Walkout ×6
+
+Cool-down: Child's Pose · Lying Knees to Chest · Wall Calf Stretch
+(0:30 each)
+
+Loaded into the app the same day; like A and B, it gets diffed
+against Nicole's real HIIT B when you capture it.
+
 ## The next two weeks on this menu
 
 | Date | Day | Session |
