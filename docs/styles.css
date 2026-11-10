@@ -309,3 +309,9 @@ main { max-width: 560px; margin: 0 auto; padding: 16px 16px 8px; }
 .sheet-close { background: var(--card2); border: none; color: #fff; border-radius: 50%; width: 30px; height: 30px; cursor: pointer; }
 .howto-list { margin: 12px 0; padding-left: 20px; line-height: 1.55; }
 .howto-list li { margin-bottom: 6px; }
+
+.reset-btn {
+  width: 100%; padding: 11px; margin: 2px 0 10px; border-radius: 12px;
+  background: none; border: 1px solid #4a2b2b; color: var(--red, #ff453a);
+  font-size: 14px; font-weight: 600; cursor: pointer;
+}

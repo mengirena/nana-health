@@ -544,6 +544,24 @@
     if (a && currentView !== 'guide') renderResumeBar();
   }
 
+  // Clear everything logged for one session: set entries, the done
+  // log, and any in-progress state. (Added 2026-11-09 after Irena
+  // trial-tested Prime A and wanted it back to a clean slate.)
+  function resetSession(dateISO, wId) {
+    var prefix = dateISO + '|' + wId + '|';
+    Object.keys(state.sets).forEach(function (k) {
+      if (k.indexOf(prefix) === 0) delete state.sets[k];
+    });
+    if (state.log[dateISO]) delete state.log[dateISO][wId];
+    if (state.active && state.active.date === dateISO &&
+        state.active.workoutId === wId) {
+      state.active = null;
+      stopRest();
+    }
+    saveState();
+    buildPlan();
+  }
+
   function renderCompleteBtn() {
     var btn = el('completeBtn');
     var done = openSession && isDone(openSession.date, openSession.workoutId);
@@ -784,6 +802,14 @@
     });
     el('completeBtn').addEventListener('click', function () {
       toggleComplete();
+      renderAll();
+    });
+
+    el('resetBtn').addEventListener('click', function () {
+      if (!openSession) return;
+      if (!window.confirm('Reset this session? All sets logged for it will be cleared.')) return;
+      resetSession(openSession.date, openSession.workoutId);
+      openWorkout(openSession.date, openSession.workoutId);
       renderAll();
     });
 
