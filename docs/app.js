@@ -29,7 +29,7 @@
   // ---------- state ----------
 
   function defaultState() {
-    return { v: APP_VERSION, log: {}, sets: {}, meals: {}, sleepSteps: {} };
+    return { v: APP_VERSION, log: {}, sets: {}, meals: {}, sleepSteps: {}, moves: {} };
   }
 
   function loadState() {
@@ -37,6 +37,7 @@
       state = JSON.parse(localStorage.getItem(STATE_KEY) || 'null') || defaultState();
     } catch (e) { state = defaultState(); }
     if (!state.log) state = defaultState();
+    if (!state.moves) state.moves = {};
   }
 
   function saveState() {
@@ -69,8 +70,73 @@
     var start = C.addDaysISO(t, -70);
     var raw = C.generatePlan(PROGRAM, start, 85); // 70 back + today + 14 forward
     var out = C.curatePlan(raw, state.log, t, PROGRAM);
+    applyUserMoves(out.days);
     curatedDays = out.days;
     planNotes = out.notes;
+  }
+
+  // ---------- user drag-and-drop moves (Kalos parity, added 2026-11-09) ----------
+  // In Kalos, a workout card on the Schedule can be dragged by its handle
+  // onto a different day. state.moves[iso] holds the full ordered session
+  // list the user wants on that date, replacing the generated list for
+  // that date only. Captured from the effective (curated) plan at drag
+  // time, so curator shifts and user moves compose.
+
+  function daySessionList(day) {
+    var list = [];
+    if (day.main) list.push(day.main);
+    (day.secondary || []).forEach(function (id) { list.push(id); });
+    return list;
+  }
+
+  function setDaySessions(day, list) {
+    day.main = null;
+    day.secondary = [];
+    list.forEach(function (id) {
+      var w = workout(id);
+      if (w && w.type === 'main' && !day.main) day.main = id;
+      else day.secondary.push(id);
+    });
+  }
+
+  function applyUserMoves(days) {
+    days.forEach(function (day) {
+      var ov = state.moves[day.date];
+      if (ov) setDaySessions(day, ov.slice());
+    });
+  }
+
+  function moveSession(fromISO, wId, toISO) {
+    if (fromISO === toISO) return false;
+    var from = dayFor(fromISO), to = dayFor(toISO);
+    if (!from || !to) return false;
+    var fromList = state.moves[fromISO] ? state.moves[fromISO].slice() : daySessionList(from);
+    var toList = state.moves[toISO] ? state.moves[toISO].slice() : daySessionList(to);
+    var i = fromList.indexOf(wId);
+    if (i < 0) return false;
+    var w = workout(wId);
+    fromList.splice(i, 1);
+    if (w && w.type === 'main') {
+      // A day holds at most one main session: dropping a main onto a day
+      // that already has a different main swaps the two mains' days.
+      var occupant = null;
+      toList.forEach(function (id) {
+        var x = workout(id);
+        if (x && x.type === 'main') occupant = id;
+      });
+      if (occupant && occupant !== wId) {
+        toList.splice(toList.indexOf(occupant), 1);
+        fromList.unshift(occupant);
+      }
+      toList.unshift(wId);
+    } else {
+      toList.push(wId);
+    }
+    state.moves[fromISO] = fromList;
+    state.moves[toISO] = toList;
+    saveState();
+    buildPlan();
+    return true;
   }
 
   function dayFor(iso) {
@@ -106,11 +172,13 @@
 
   function statusMark(dateISO, wId, isMain) {
     if (isDone(dateISO, wId)) return '<span class="check">✓</span>';
-    if (isMain && dateISO < todayISO()) return '<span class="missed-x">✕</span>';
+    // Kalos marks missed secondaries with a red ✕ too (e.g. Sun Nov 8's
+    // Static Stretches), not just missed mains.
+    if (dateISO < todayISO()) return '<span class="missed-x">✕</span>';
     return '';
   }
 
-  function sessionCardHTML(day, wId, kind) {
+  function sessionCardHTML(day, wId, kind, draggable) {
     var w = workout(wId);
     if (!w) return '';
     var counts = workoutCounts(w);
@@ -120,12 +188,17 @@
       pills += '<span class="pill moved">Moved from ' + esc(C.prettyDate(day.movedFrom)) + '</span> ';
     }
     if (day.deload && kind === 'main') pills += '<span class="pill deload">Deload week</span> ';
+    var handle = '';
+    if (draggable && !isDone(day.date, wId)) {
+      handle = '<span class="drag-handle" data-drag="' + esc(day.date) + '|' + esc(wId) +
+               '" title="Drag to another day">≡</span>';
+    }
     return '<div class="card session-card" data-open="' + esc(day.date) + '|' + esc(wId) + '">' +
       '<div class="row"><div>' +
       '<div class="wname">' + esc(w.name) + '</div>' +
       '<div class="wmeta">' + esc(w.phase || '') + ' · ' + counts.exercises + ' exercises · ' +
       counts.sets + ' sets</div>' + pills +
-      '</div>' + statusMark(day.date, wId, kind === 'main') + '</div></div>';
+      '</div><div class="card-marks">' + statusMark(day.date, wId, kind === 'main') + handle + '</div></div></div>';
   }
 
   function restCardHTML() {
@@ -196,9 +269,9 @@
       var label = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'][day.weekday] +
                   '<span class="dnum">' + d.getDate() + '</span>';
       var cards = '';
-      if (day.main) cards += sessionCardHTML(day, day.main, 'main');
+      if (day.main) cards += sessionCardHTML(day, day.main, 'main', true);
       (day.secondary || []).forEach(function (id) {
-        cards += sessionCardHTML(day, id, 'secondary');
+        cards += sessionCardHTML(day, id, 'secondary', true);
       });
       if (!cards) cards = restCardHTML();
       var outline = day.date === t ? ' today-outline' : '';
@@ -206,7 +279,8 @@
       cards = cards.replace('class="card session-card"', 'class="card session-card' + outline + '"')
                    .replace('class="rest-card"', 'class="rest-card' + outline + '"');
       html += '<div class="day-row"><div class="day-label">' + label + '</div>' +
-              '<div class="grow">' + cards + notesHTML(day.date) + '</div></div>';
+              '<div class="grow day-drop" data-date="' + esc(day.date) + '">' +
+              cards + notesHTML(day.date) + '</div></div>';
     });
     el('scheduleList').innerHTML = html;
   }
@@ -360,6 +434,8 @@
   }
 
   function bindEvents() {
+    var suppressClick = false;
+
     document.querySelectorAll('.tab').forEach(function (t) {
       t.addEventListener('click', function () {
         showView(t.getAttribute('data-view'));
@@ -368,6 +444,7 @@
 
     // Session cards (event delegation — cards are re-rendered often)
     document.addEventListener('click', function (e) {
+      if (suppressClick) return;
       var card = e.target.closest ? e.target.closest('[data-open]') : null;
       if (card) {
         var parts = card.getAttribute('data-open').split('|');
@@ -383,6 +460,70 @@
         box.classList.toggle('on');
       }
     });
+
+    // Drag-and-drop (Schedule): press the ≡ handle on a session card and
+    // drag it onto another day. Pointer events, so touch and mouse both
+    // work; the handle has touch-action:none so the list still scrolls
+    // normally from anywhere else on the card.
+    var drag = null;
+    el('scheduleList').addEventListener('pointerdown', function (e) {
+      var h = e.target.closest ? e.target.closest('[data-drag]') : null;
+      if (!h) return;
+      var card = h.closest ? h.closest('.session-card') : null;
+      if (!card) return;
+      var parts = h.getAttribute('data-drag').split('|');
+      drag = { pointerId: e.pointerId, fromISO: parts[0], wId: parts[1],
+               card: card, startX: e.clientX, startY: e.clientY,
+               active: false, clone: null, dropDate: null };
+      e.preventDefault();
+    });
+    document.addEventListener('pointermove', function (e) {
+      if (!drag || e.pointerId !== drag.pointerId) return;
+      if (!drag.active) {
+        if (Math.abs(e.clientX - drag.startX) + Math.abs(e.clientY - drag.startY) < 8) return;
+        drag.active = true;
+        var r = drag.card.getBoundingClientRect();
+        var c = drag.card.cloneNode(true);
+        c.classList.add('drag-clone');
+        c.style.width = r.width + 'px';
+        c.style.left = r.left + 'px';
+        c.style.top = r.top + 'px';
+        document.body.appendChild(c);
+        drag.clone = c;
+        drag.offX = drag.startX - r.left;
+        drag.offY = drag.startY - r.top;
+        drag.card.classList.add('drag-src');
+      }
+      drag.clone.style.left = (e.clientX - drag.offX) + 'px';
+      drag.clone.style.top = (e.clientY - drag.offY) + 'px';
+      var under = document.elementFromPoint(e.clientX, e.clientY);
+      var drop = under && under.closest ? under.closest('.day-drop') : null;
+      document.querySelectorAll('.day-drop.drop-hot').forEach(function (d) {
+        if (d !== drop) d.classList.remove('drop-hot');
+      });
+      if (drop) drop.classList.add('drop-hot');
+      drag.dropDate = drop ? drop.getAttribute('data-date') : null;
+    });
+    function endDrag(e) {
+      if (!drag || (e && e.pointerId !== drag.pointerId)) return;
+      var d = drag;
+      drag = null;
+      if (d.clone) d.clone.remove();
+      d.card.classList.remove('drag-src');
+      document.querySelectorAll('.day-drop.drop-hot').forEach(function (x) {
+        x.classList.remove('drop-hot');
+      });
+      if (d.active) {
+        suppressClick = true;
+        setTimeout(function () { suppressClick = false; }, 80);
+        if (d.dropDate && d.dropDate !== d.fromISO &&
+            moveSession(d.fromISO, d.wId, d.dropDate)) {
+          renderAll();
+        }
+      }
+    }
+    document.addEventListener('pointerup', endDrag);
+    document.addEventListener('pointercancel', endDrag);
 
     el('workoutBack').addEventListener('click', function () {
       renderAll();

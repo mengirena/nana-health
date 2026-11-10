@@ -68,9 +68,21 @@ video assets (demo videos are links/placeholders in our app).
 ### 4.2 Schedule
 - Sessions grouped by week ("Nov 8 – Nov 14"), generated forward
   **14 days** from the weekly pattern by the curation layer (§6).
-- Past days show ✓ (completed) / ✕ (missed) from the log; rest days
-  shown dashed; today outlined. Plan Notes line appears whenever the
-  curator adjusted something (§6).
+- Past days show ✓ (completed) / ✕ (missed) from the log — the ✕
+  applies to secondary sessions too (Sun Nov 8's Static Stretches
+  showed a red ✕); rest days shown dashed; today outlined. Plan Notes
+  line appears whenever the curator adjusted something (§6).
+- **Drag-and-drop rescheduling** (Kalos behaviour, walked through
+  2026-11-09): every not-yet-completed session card carries a ≡ drag
+  handle on its right side. Dragging a card onto another day moves
+  that session there — she demonstrated dragging Sunday's missed
+  Static Stretches onto Monday and back. A day emptied of sessions
+  becomes a rest day; a day that receives a card loses its rest-day
+  label; a missed session dragged to today or later is scheduled
+  again. One main per day: dropping a main session onto a day that
+  already has a different main swaps the two mains' days. Manual
+  moves are stored as per-date overrides and applied on top of the
+  curated plan (§6).
 
 ### 4.3 Workout overview (bottom sheet, before starting)
 - Title + meta line: "Phase 2 | 16 Exercises | 30 sets".
@@ -214,6 +226,9 @@ video assets (demo videos are links/placeholders in our app).
   - Never two main sessions on adjacent days; at least one rest day
     between main sessions.
   - Every 4th week is flagged as a deload week.
+- Manual moves (§4.2) sit above curation: a per-date session list
+  saved by a drag overrides the curated result for that date, and
+  curation never fights a user move.
 - Known limitation (found in v1 testing): with mains fixed Sun/Tue/
   Thu, most rest days border a main session, so most missed sessions
   cannot legally move (a missed Thu B can slide to Fri; a missed Sun C
@@ -251,6 +266,10 @@ video assets (demo videos are links/placeholders in our app).
 - **v1 (built 2026-11-08, verified locally)**: Today, Schedule
   (14-day generation + curation v1 rules), Workout detail with set
   checkboxes and completion logging, Progress, Coach placeholder.
+- **v1.1 (2026-11-09)**: drag-and-drop schedule moves (§4.2)
+  implemented and published ahead of the rest of v2 — ≡ handle drag
+  between days, per-date overrides in state, main-for-main swap, and
+  missed ✕ extended to secondary sessions.
 - **v2 adds (from this finalized spec)**: guided in-workout view with
   continuous scroll, numeric keypad entry, prefill-from-last-time,
   weight carry-down, green-row logging with auto-advance, rest timer

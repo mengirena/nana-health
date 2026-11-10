@@ -225,6 +225,31 @@ through: Today → overview → start → per-set logging (keypad, green
 rows, prefill from last time) → rest timer (+ PB banner) → History →
 Swap → pause/resume → swipe to finish / discard.
 
+## Schedule drag-and-drop (walked through 2026-11-09, 5 screenshots)
+
+From the calendar icon on Today (which also confirmed the rest-day
+Today card: "Rest day — Take some time to recover." + "Next: Prime I
+P2 I A … tomorrow", 5-week streak, "1 of 2 this week", 2 meals logged):
+
+- The Schedule lists the week (Nov 8 – Nov 14) with one card per
+  session. Completed sessions show a green ✓ (Sun 8 Prime C); a missed
+  session shows a red ✕ — including a secondary: Sun 8's Static
+  Stretches carries the ✕.
+- Upcoming cards carry a ≡ handle on the right. Pressing it lets you
+  drag the whole card to a different day: she dragged Sun 8's missed
+  Static Stretches down onto Mon 9 (the card floats over the list,
+  ghosted, while dragging), Mon stopped being a "Rest day" and became
+  the stretches day, and Sun kept only Prime C.
+- The final screenshot shows the original layout restored — she
+  dragged it back, so moves are freely reversible.
+- One observation to confirm: Sat 14 shows a "Prime I P2 I C" card (in
+  addition to its Static Stretches below the fold) — a fourth Prime
+  session that week, or something else? Not yet explained.
+- Implemented in Nana Health the same day (v1.1): handle drag via
+  pointer events, per-date overrides in state applied over the
+  curated plan, one-main-per-day enforced by swapping mains, missed ✕
+  extended to secondaries.
+
 ## Still to come from Irena
 - Prime A and Prime B exercise lists, and the Friday HIIT session.
 - The names/weights hidden in the cut-off parts of the P2 C list above.
