@@ -50,8 +50,10 @@ Saturday's session dragged to Sunday — Kalos weeks can look shifted
 because sessions drag between days.)
 
 Prime C and Static Stretches are transcribed in full (16 exercises /
-30 sets, and 10 exercises / 21 sets). Prime A, Prime B and HIIT B are
-structured placeholders — see "Data still needed".
+30 sets, and 10 exercises / 21 sets). Prime A and Prime B are
+AI-composed from the observed pattern and Irena's logged history
+(`AI-MENU-PROPOSAL.md`), approved by her and loaded 2026-11-09;
+HIIT B is still a structured placeholder — see "Data still needed".
 
 Equipment swaps: Irena has a flat bench only, so Prime C's Incline
 Dumbbell Row is swapped to Prone Dumbbell Row (flat bench), same 3×10
@@ -106,8 +108,8 @@ same setup as the flashcard app. Bump the `?v=` query strings and the
 
 ## Data still needed
 
-- **Prime A exercise list** (blocks, sets × reps) — placeholder in v1.
-- **Prime B exercise list** — placeholder in v1.
+- **Nicole's real Prime A / B exercise lists** — to diff against the
+  AI-composed templates now in the app (loaded 2026-11-09).
 - **Full Body HIIT I B exercise list** — name/secondary flag only in v1.
 - Future DEXA scans: append to `progressSeed.scans` in
   `docs/data/program.json` (cards always compare latest vs baseline).

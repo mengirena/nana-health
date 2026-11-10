@@ -50,8 +50,11 @@ video assets (demo videos are links/placeholders in our app).
   (3 exercises, 2 sets) → Finishers (timed stretches, 30 s holds).
 - Templates captured in full: Prime P2 C (16 exercises, 30 sets) and
   Static Stretches: Cool-Down (10 exercises, 21 sets) — see
-  `docs/data/program.json`. Prime A, Prime B, HIIT B are structured
-  placeholders until Irena walks them through.
+  `docs/data/program.json`. Prime A and Prime B are AI-composed
+  (§6, approved and loaded 2026-11-09) until Irena walks through
+  Nicole's real lists and we diff them; HIIT B is still a structured
+  placeholder. Also noted: the Dumbbell Floor Press carries no
+  weight in Kalos (Irena, 2026-11-09).
 - Equipment reality: dumbbells + flat bench only. Standing swap:
   Incline Dumbbell Row → Prone Dumbbell Row (flat bench), same 3×10
   (decided 2026-11-08, note stored on the exercise).
@@ -253,7 +256,10 @@ video assets (demo videos are links/placeholders in our app).
   loaded). Menus are proposed to Irena for approval, then loaded as
   templates. First proposal (AI-composed Prime A and Prime B +
   the Nov 10–22 schedule): `AI-MENU-PROPOSAL.md`, mirrored as a
-  Google Doc in the "Kalos Trainer App" Drive folder.
+  Google Doc in the "Kalos Trainer App" Drive folder. **Approved by
+  Irena and loaded into the app 2026-11-09** (floor press carries no
+  weight — Kalos lists none, her correction); the templates now
+  await a diff against Nicole's real A / B lists when captured.
 
 ## 7. Data model (summary)
 
