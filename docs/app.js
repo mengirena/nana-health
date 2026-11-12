@@ -218,7 +218,7 @@
 
   function showView(name) {
     currentView = name;
-    ['today', 'schedule', 'progress', 'coach', 'workout', 'guide'].forEach(function (v) {
+    ['today', 'schedule', 'progress', 'coach', 'food', 'workout', 'guide'].forEach(function (v) {
       el('view-' + v).hidden = v !== name;
     });
     document.querySelectorAll('.tab').forEach(function (t) {
@@ -680,12 +680,48 @@
     });
   }
 
+
+  // ---------- food log (synced from the Food Intake Log sheet) ----------
+
+  var FOODLOG = null;
+
+  function loadFoodLog() {
+    return fetch('data/food-log.json')
+      .then(function (r) { if (!r.ok) throw new Error('bad fetch'); return r.json(); })
+      .catch(function () { return { days: [] }; });
+  }
+
+  function renderFood() {
+    var host = el('foodList');
+    if (!host) return;
+    if (!FOODLOG) { host.innerHTML = '<div class="card">Loading food log\u2026</div>'; return; }
+    if (!FOODLOG.days || !FOODLOG.days.length) {
+      host.innerHTML = '<div class="card">No food days synced yet.</div>'; return;
+    }
+    host.innerHTML = FOODLOG.days.map(function (d) {
+      var stats = [
+        '~' + d.calories + ' kcal',
+        'Protein ' + d.proteinG + ' g / 90',
+        'Calcium ' + d.calciumMg + ' mg / 1000' + (d.calciumNote ? ' (' + esc(d.calciumNote) + ')' : ''),
+        'Fiber ' + d.fiberG + ' g / 25',
+        'Fat ' + d.fatG + ' g',
+        (d.saturatedFatG === null || d.saturatedFatG === undefined) ? 'Sat fat not tracked' : 'Sat fat ~' + d.saturatedFatG + ' g',
+        (d.waterL === null || d.waterL === undefined) ? 'Water not logged' : 'Water ' + d.waterL + ' L / 1.6-1.9',
+        (d.cholesterolMg === null || d.cholesterolMg === undefined) ? 'Cholesterol not tracked' : 'Cholesterol ~' + d.cholesterolMg + ' mg'
+      ];
+      return '<div class="card"><div class="coach-note-title">' + esc(d.date) + ' \u00b7 ' + esc(d.dayType) + (d.status !== 'final' ? ' \u00b7 ' + esc(d.status) : '') + '</div>' +
+        '<div>' + stats.map(esc).join(' \u00b7 ') + '</div>' +
+        (d.notes ? '<div class="muted small">' + esc(d.notes) + '</div>' : '') + '</div>';
+    }).join('');
+  }
+
   // ---------- events + init ----------
 
   function renderAll() {
     renderToday();
     renderSchedule();
     renderProgress();
+    renderFood();
     renderResumeBar();
   }
 
@@ -934,6 +970,7 @@
         return;
       }
       buildPlan();
+      loadFoodLog().then(function (fl) { FOODLOG = fl; renderFood(); });
       bindEvents();
       renderAll();
       showView('today');

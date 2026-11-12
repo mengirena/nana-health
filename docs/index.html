@@ -11,7 +11,7 @@
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <meta name="apple-mobile-web-app-title" content="Nana" />
-  <link rel="stylesheet" href="styles.css?v=6" />
+  <link rel="stylesheet" href="styles.css?v=8" />
 </head>
 <body>
   <main id="appMain">
@@ -75,6 +75,14 @@
           <li>Phase 2 focus: strength + hypertrophy, dumbbells only.</li>
         </ul>
       </div>
+    </section>
+
+
+    <!-- FOOD -->
+    <section id="view-food" class="view" hidden>
+      <h1 class="page-title">Food log</h1>
+      <p class="muted small">Synced from your Food Intake Log — send Iggy your meals as usual; totals land here when each day closes.</p>
+      <div id="foodList"></div>
     </section>
 
     <!-- WORKOUT DETAIL (overlay view, opened from Today / Schedule) -->
@@ -153,10 +161,11 @@
     <button class="tab active" data-view="today"><span class="tab-ico">☀️</span>Today</button>
     <button class="tab" data-view="schedule"><span class="tab-ico">🗓️</span>Schedule</button>
     <button class="tab" data-view="progress"><span class="tab-ico">📊</span>Progress</button>
+    <button class="tab" data-view="food"><span class="tab-ico">🍽️</span>Food</button>
     <button class="tab" data-view="coach"><span class="tab-ico">💬</span>Coach</button>
   </nav>
 
-  <script src="curate.js?v=6"></script>
-  <script src="app.js?v=6"></script>
+  <script src="curate.js?v=8"></script>
+  <script src="app.js?v=8"></script>
 </body>
 </html>
