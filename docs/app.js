@@ -682,13 +682,31 @@
 
 
   // ---------- food log (synced from the Food Intake Log sheet) ----------
+  // Kalos-style day view: week strip + photo meal entries (newest first)
+  // + day totals against targets.
 
   var FOODLOG = null;
+  var FOODDAY = null;
+
+  var FOODPHOTOS = {};
 
   function loadFoodLog() {
-    return fetch('data/food-log.json')
-      .then(function (r) { if (!r.ok) throw new Error('bad fetch'); return r.json(); })
-      .catch(function () { return { days: [] }; });
+    var photosP = fetch('data/food-photos.json')
+      .then(function (r) { return r.ok ? r.json() : {}; })
+      .catch(function () { return {}; });
+    return photosP.then(function (ph) {
+      FOODPHOTOS = ph || {};
+      return fetch('data/food-log.json')
+        .then(function (r) { if (!r.ok) throw new Error('bad fetch'); return r.json(); })
+        .catch(function () { return { days: [] }; });
+    });
+  }
+
+  function foodDateObj(iso) { return new Date(iso + 'T12:00:00'); }
+
+  function foodIso(dt) {
+    function p(n) { return (n < 10 ? '0' : '') + n; }
+    return dt.getFullYear() + '-' + p(dt.getMonth() + 1) + '-' + p(dt.getDate());
   }
 
   function renderFood() {
@@ -698,7 +716,43 @@
     if (!FOODLOG.days || !FOODLOG.days.length) {
       host.innerHTML = '<div class="card">No food days synced yet.</div>'; return;
     }
-    host.innerHTML = FOODLOG.days.map(function (d) {
+    var byDate = {};
+    FOODLOG.days.forEach(function (d) { byDate[d.date] = d; });
+    if (!FOODDAY || !byDate[FOODDAY]) FOODDAY = FOODLOG.days[0].date;
+
+    var sel = foodDateObj(FOODDAY);
+    var sunday = new Date(sel.getFullYear(), sel.getMonth(), sel.getDate() - sel.getDay());
+    var letters = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
+    var strip = '';
+    for (var i = 0; i < 7; i++) {
+      var dt = new Date(sunday.getFullYear(), sunday.getMonth(), sunday.getDate() + i);
+      var iso = foodIso(dt);
+      strip += '<button type="button" class="food-day' + (iso === FOODDAY ? ' sel' : '') + '" data-date="' + iso + '">' +
+        '<span class="fd-letter">' + letters[i] + '</span>' +
+        '<span class="fd-num">' + dt.getDate() + '</span>' +
+        '<span class="fd-dot">' + (byDate[iso] ? '\u2022' : '') + '</span></button>';
+    }
+    var title = sel.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' });
+    var html = '<div class="food-week">' + strip + '</div>' +
+      '<div class="food-date-title">' + esc(title) + '</div>';
+
+    var d = byDate[FOODDAY];
+    if (!d) {
+      html += '<div class="card">No food logged this day.</div>';
+    } else {
+      var items = (d.items || []).slice().reverse();
+      html += items.map(function (e) {
+        var sub = [];
+        if (e.time) sub.push(e.time);
+        sub.push('~' + e.kcal + ' kcal');
+        if (e.proteinG) sub.push('Protein ' + e.proteinG + ' g');
+        var thumb = (e.photo && FOODPHOTOS[e.photo])
+          ? '<img class="food-thumb" src="' + FOODPHOTOS[e.photo] + '" alt="" loading="lazy" />'
+          : '<div class="food-thumb food-ph">\uD83C\uDF7D\uFE0F</div>';
+        return '<div class="food-entry">' + thumb +
+          '<div class="food-main"><div class="food-name">' + esc(e.name) + '</div>' +
+          '<div class="food-sub">' + esc(sub.join(' \u00b7 ')) + '</div></div></div>';
+      }).join('');
       var stats = [
         '~' + d.calories + ' kcal',
         'Protein ' + d.proteinG + ' g / 90',
@@ -709,10 +763,15 @@
         (d.waterL === null || d.waterL === undefined) ? 'Water not logged' : 'Water ' + d.waterL + ' L / 1.6-1.9',
         (d.cholesterolMg === null || d.cholesterolMg === undefined) ? 'Cholesterol not tracked' : 'Cholesterol ~' + d.cholesterolMg + ' mg'
       ];
-      return '<div class="card"><div class="coach-note-title">' + esc(d.date) + ' \u00b7 ' + esc(d.dayType) + (d.status !== 'final' ? ' \u00b7 ' + esc(d.status) : '') + '</div>' +
+      html += '<div class="card food-total"><div class="coach-note-title">Day total \u00b7 ' + esc(d.dayType) + (d.status !== 'final' ? ' \u00b7 ' + esc(d.status) : '') + '</div>' +
         '<div>' + stats.map(esc).join(' \u00b7 ') + '</div>' +
         (d.notes ? '<div class="muted small">' + esc(d.notes) + '</div>' : '') + '</div>';
-    }).join('');
+    }
+    host.innerHTML = html;
+    var btns = host.querySelectorAll('.food-day');
+    for (var b = 0; b < btns.length; b++) {
+      btns[b].addEventListener('click', function () { FOODDAY = this.getAttribute('data-date'); renderFood(); });
+    }
   }
 
   // ---------- events + init ----------

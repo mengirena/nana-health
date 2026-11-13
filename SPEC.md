@@ -205,6 +205,32 @@ video assets (demo videos are links/placeholders in our app).
   bone density is judged on 3–6-month trends), session notes and
   per-exercise cues surface where they belong (§4.3, §4.4). No chat.
 
+### 4.12 Food (added 2026-11-11, at Irena's request)
+- Fifth tab (🍽️ Food). Read-only mirror of the Food Intake Log: one
+  card per day with totals — calories, protein, calcium, fiber, fat,
+  water, cholesterol — against the standing targets, plus the day's
+  notes.
+- Data lives in `docs/data/food-log.json`, synced from the Google
+  Sheet "Food Intake & Kalos DEXA Tracking" (Daily Food Totals) each
+  time a day closes; the Sheet remains the version of record.
+- Cholesterol tracked from 2026-11-11 (Irena has high cholesterol).
+  Reference: <300 mg/day general, <200 mg/day often advised with
+  high cholesterol; no trainer-set target yet. Earlier days show
+  "Cholesterol not tracked".
+- Format update 2026-11-13 (Irena: follow the Kalos Health format):
+  the tab is now a Kalos-style day view — a week strip (Sun–Sat,
+  dots on logged days) over one selected day; meal entries newest
+  first, each with photo thumbnail (or placeholder), name, time,
+  kcal, and protein when known; the day totals vs targets sit in a
+  "Day total" card below the entries. `food-log.json` days gained an
+  `items` array (name, kcal, optional proteinG/time/photo); item
+  kcal sums must equal the day total. Meal photos are 480px square
+  thumbnails copied from Irena's chat uploads at sync time and
+  embedded as base64 data URIs in `docs/data/food-photos.json`,
+  keyed by the item's `photo` value — the GitHub snapshot push is
+  text-only, so binary image files cannot be pushed directly.
+  Days before 2026-11-10 mostly have no photos (placeholder tile).
+
 ## 5. Exercise library and custom additions
 
 - Library entries: name, thumbnail/video links (optional 2nd angle),

@@ -13,18 +13,82 @@
  },
  "days": [
   {
+   "date": "2026-11-13",
+   "dayType": "Friday - rest day (optional HIIT B)",
+   "status": "in progress",
+   "calories": 310,
+   "proteinG": 22,
+   "calciumMg": 373,
+   "fiberG": 2,
+   "waterL": 0,
+   "fatG": 12.5,
+   "saturatedFatG": 4.9,
+   "cholesterolMg": 208,
+   "notes": "Breakfast: homemade edamame egg bake, 1/4 of recipe (4 eggs, 120 mL egg white, ~1 cup edamame, 2 pinches cheddar). Plus a latte.",
+   "items": [
+    {
+     "name": "Edamame egg bake (1/4 of recipe)",
+     "kcal": 160,
+     "proteinG": 14,
+     "time": "10:13 AM",
+     "photo": "2026-11-13-eggbake"
+    },
+    {
+     "name": "Latte",
+     "kcal": 150,
+     "proteinG": 8
+    }
+   ]
+  },
+  {
    "date": "2026-11-12",
    "dayType": "Thursday - training day (Prime B)",
-   "status": "in progress",
-   "calories": 1450,
-   "proteinG": 120,
-   "calciumMg": 660,
-   "fiberG": 9.4,
-   "waterL": 0.36,
-   "fatG": 73,
-   "saturatedFatG": 22.8,
-   "cholesterolMg": 680,
-   "notes": "Office breakfast (eggs + egg white, spinach, half hash brown, pineapple) + latte; cafeteria lunch: BBQ ribs, fried chicken, chicken-corn salad."
+   "status": "final",
+   "calories": 1250,
+   "proteinG": 88,
+   "calciumMg": 970,
+   "fiberG": 8.9,
+   "waterL": 1.21,
+   "fatG": 58,
+   "saturatedFatG": 17.1,
+   "cholesterolMg": 570,
+   "notes": "Office breakfast (eggs + egg white, spinach, half hash brown, pineapple) + latte; cafeteria lunch adjusted for leftovers (about half the ribs, a quarter of the fried chicken, and a few salad chicken cubes uneaten). Supplements taken. Evening: Chi Forest hawthorn & chenpi water 500 mL (label: 90 kcal, 20 g sugar). No dinner logged.",
+   "calciumNote": "incl. Centrum 300 mg",
+   "items": [
+    {
+     "name": "Latte",
+     "kcal": 150,
+     "proteinG": 8
+    },
+    {
+     "name": "Office breakfast: scrambled eggs + egg white, spinach, 1/2 hash brown, pineapple",
+     "kcal": 320,
+     "proteinG": 22,
+     "photo": "2026-11-12-breakfast"
+    },
+    {
+     "name": "Cafeteria lunch: BBQ ribs, fried chicken, chicken salad (adjusted for leftovers)",
+     "kcal": 670,
+     "proteinG": 58,
+     "time": "12:57 PM",
+     "photo": "2026-11-12-lunch"
+    },
+    {
+     "name": "Supplements",
+     "kcal": 20,
+     "time": "4:23 PM"
+    },
+    {
+     "name": "Hint watermelon water x2",
+     "kcal": 0
+    },
+    {
+     "name": "Chi Forest hawthorn & chenpi water (label: 90 kcal, 20 g sugar)",
+     "kcal": 90,
+     "time": "6:10 PM",
+     "photo": "2026-11-12-drink"
+    }
+   ]
   },
   {
    "date": "2026-11-11",
@@ -39,7 +103,40 @@
    "cholesterolMg": 765,
    "notes": "Pretzel bun breakfast + latte; egg tofu noodle soup; chicken ciabatta dinner. Supplements taken. First day of cholesterol + saturated fat tracking.",
    "saturatedFatG": 19.4,
-   "calciumNote": "incl. Centrum 300 mg"
+   "calciumNote": "incl. Centrum 300 mg",
+   "items": [
+    {
+     "name": "Toast, sausage & egg (pretzel bun, plant butter, chicken sausage x3, fried egg)",
+     "kcal": 635,
+     "time": "10:30 AM",
+     "photo": "2026-11-11-breakfast"
+    },
+    {
+     "name": "Latte",
+     "kcal": 150
+    },
+    {
+     "name": "Egg tofu noodle soup",
+     "kcal": 290,
+     "time": "4:00 PM",
+     "photo": "2026-11-11-soup"
+    },
+    {
+     "name": "Chi Forest red date & goji water",
+     "kcal": 10,
+     "photo": "2026-11-11-drink"
+    },
+    {
+     "name": "Supplements",
+     "kcal": 20
+    },
+    {
+     "name": "Salt & pepper chicken + ciabatta, creamy miso, greens",
+     "kcal": 574,
+     "time": "8:19 PM",
+     "photo": "2026-11-11-dinner"
+    }
+   ]
   },
   {
    "date": "2026-11-10",
@@ -53,7 +150,37 @@
    "waterL": 1.3,
    "fatG": 96,
    "cholesterolMg": null,
-   "notes": "Latte; cafeteria breakfast + Thai lunch; grilled BBQ dinner. Supplements taken."
+   "notes": "Latte; cafeteria breakfast + Thai lunch; grilled BBQ dinner. Supplements taken.",
+   "items": [
+    {
+     "name": "Latte",
+     "kcal": 150,
+     "time": "8:34 AM",
+     "photo": "2026-11-10-latte"
+    },
+    {
+     "name": "Cafeteria breakfast: scrambled eggs, egg white, spinach, tots, pineapple",
+     "kcal": 330
+    },
+    {
+     "name": "Hint watermelon water x2",
+     "kcal": 0
+    },
+    {
+     "name": "Thai cafeteria lunch: green curry chicken, ground pork, rice, green beans",
+     "kcal": 905,
+     "time": "1:09 PM",
+     "photo": "2026-11-10-lunch"
+    },
+    {
+     "name": "Dinner: grilled squid, enoki, mussels, scallion pancake",
+     "kcal": 575
+    },
+    {
+     "name": "Supplements",
+     "kcal": 20
+    }
+   ]
   },
   {
    "date": "2026-11-09",
@@ -67,7 +194,41 @@
    "waterL": 1.18,
    "fatG": 49,
    "cholesterolMg": null,
-   "notes": "Hungryroot pancakes brunch, leftover chicken lunch, green curry dinner, full can Huel Daily Greens. Supplements taken."
+   "notes": "Hungryroot pancakes brunch, leftover chicken lunch, green curry dinner, full can Huel Daily Greens. Supplements taken.",
+   "items": [
+    {
+     "name": "Brunch: Hungryroot pancakes x2 + chicken sausage x3",
+     "kcal": 340
+    },
+    {
+     "name": "Leftover chicken breast + broccoli",
+     "kcal": 265
+    },
+    {
+     "name": "Truffle (1 bite)",
+     "kcal": 20
+    },
+    {
+     "name": "Seaweed roll",
+     "kcal": 10
+    },
+    {
+     "name": "Huel Daily Greens (full can)",
+     "kcal": 25
+    },
+    {
+     "name": "Dinner: Hungryroot Green Curry Chicken (label)",
+     "kcal": 550
+    },
+    {
+     "name": "Japanese cheesecake (small piece)",
+     "kcal": 120
+    },
+    {
+     "name": "Supplements",
+     "kcal": 20
+    }
+   ]
   },
   {
    "date": "2026-11-08",
@@ -81,7 +242,33 @@
    "waterL": 0.12,
    "fatG": 44,
    "cholesterolMg": null,
-   "notes": "Egg loaf + latte; Coffee Festival lunch; chicken breast dinner."
+   "notes": "Egg loaf + latte; Coffee Festival lunch; chicken breast dinner.",
+   "items": [
+    {
+     "name": "Baked egg loaf (5 bites)",
+     "kcal": 78
+    },
+    {
+     "name": "Latte",
+     "kcal": 150
+    },
+    {
+     "name": "Coffee Festival: chai x2, black coffee x2, waffle",
+     "kcal": 600
+    },
+    {
+     "name": "Dinner: chicken breast, sweet potato, zucchini, arugula",
+     "kcal": 480
+    },
+    {
+     "name": "Red wine",
+     "kcal": 125
+    },
+    {
+     "name": "Japanese cheesecake (1/2)",
+     "kcal": 115
+    }
+   ]
   },
   {
    "date": "2026-11-07",
@@ -95,7 +282,41 @@
    "waterL": 0,
    "fatG": 87,
    "cholesterolMg": null,
-   "notes": "Yogurt bowl + croissant sandwich, baked egg loaf, Indian dinner. Supplements taken."
+   "notes": "Yogurt bowl + croissant sandwich, baked egg loaf, Indian dinner. Supplements taken.",
+   "items": [
+    {
+     "name": "Latte",
+     "kcal": 150
+    },
+    {
+     "name": "Yogurt bowl 1/2 + croissant sandwich 1/2",
+     "kcal": 568
+    },
+    {
+     "name": "Boiled egg",
+     "kcal": 70
+    },
+    {
+     "name": "Chai",
+     "kcal": 145
+    },
+    {
+     "name": "Grape cheesecake",
+     "kcal": 230
+    },
+    {
+     "name": "Baked egg loaf (5 bites)",
+     "kcal": 78
+    },
+    {
+     "name": "Indian dinner + beer",
+     "kcal": 730
+    },
+    {
+     "name": "Supplements",
+     "kcal": 20
+    }
+   ]
   },
   {
    "date": "2026-11-06",
@@ -109,7 +330,37 @@
    "waterL": 0.35,
    "fatG": 88,
    "cholesterolMg": null,
-   "notes": "DEXA scan day (body fat 34.0% -> 32.5%). Supplements taken."
+   "notes": "DEXA scan day (body fat 34.0% -> 32.5%). Supplements taken.",
+   "items": [
+    {
+     "name": "Breakfast: eggs, spinach, tater tots",
+     "kcal": 340
+    },
+    {
+     "name": "Latte",
+     "kcal": 150
+    },
+    {
+     "name": "Lunch: polenta shrimp scampi + panna cotta",
+     "kcal": 775
+    },
+    {
+     "name": "Supplements",
+     "kcal": 20
+    },
+    {
+     "name": "Dinner: Hungryroot lamb chops + potatoes",
+     "kcal": 460
+    },
+    {
+     "name": "Red wine",
+     "kcal": 130
+    },
+    {
+     "name": "Tao Kae Noi seaweed roll",
+     "kcal": 10
+    }
+   ]
   },
   {
    "date": "2026-11-05",
@@ -122,7 +373,17 @@
    "waterL": null,
    "fatG": 26,
    "cholesterolMg": null,
-   "notes": "Hungryroot chicken & quinoa grain bowl; grapes."
+   "notes": "Hungryroot chicken & quinoa grain bowl; grapes.",
+   "items": [
+    {
+     "name": "Hungryroot Chicken & Quinoa Grain Bowl (label)",
+     "kcal": 500
+    },
+    {
+     "name": "Grapes (~18-20)",
+     "kcal": 205
+    }
+   ]
   }
  ]
 }
