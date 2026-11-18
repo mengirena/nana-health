@@ -13,21 +13,185 @@
  },
  "days": [
   {
+   "date": "2026-11-17",
+   "dayType": "Boxing bootcamp day 2",
+   "calories": 1905,
+   "proteinG": 132,
+   "calciumMg": 1046,
+   "fiberG": 22.3,
+   "waterL": 2.66,
+   "fatG": 66.5,
+   "saturatedFatG": 17.8,
+   "cholesterolMg": 712,
+   "notes": "Bootcamp shake 5:20 AM. Office breakfast same plate as Nov 16. Lunch: salad bowl mostly finished; hot plate only ~half eaten (she said the food was really bad) - pizza ~55%, sausage ~55%, sprouts ~50%, broccolini ~30%, pumpkin cheesecake square untouched. Chocolate soft serve in waffle cone after lunch. Water: shake ~0.35 + 42 oz tumbler at workout (her stated size; flask confirmed 40 oz on Nov 16) 1.24 + lunch cup ~0.35 + 1 Hint can 0.36 = ~2.30 L. Dinner and supplements not yet reported. Nov 16 supplements still unconfirmed. Soft serve corrected: only the swirl eaten (~140 of ~280 kcal); cone and the soft serve inside it were left. Dinner: Hungryroot Lemony Halibut + Broccoli Couscous, 1 serving (label values, same meal as Nov 15). Supplements confirmed taken Nov 17. Evening: TRIP Calm drink, label 35 kcal, magnesium 120 mg; counted toward fluids.",
+   "items": [
+    {
+     "name": "Pre-workout protein shake (5:20 AM)",
+     "kcal": 135,
+     "proteinG": 18,
+     "time": "5:20 AM",
+     "photo": "2026-11-16-shake"
+    },
+    {
+     "name": "Office breakfast: scrambled eggs, egg whites, spinach, tots x3, pineapple",
+     "kcal": 315,
+     "proteinG": 22,
+     "photo": "2026-11-17-breakfast"
+    },
+    {
+     "name": "Office lunch salad bowl: chicken, chopped egg, tofu, chickpeas, corn, beets, greens (mostly eaten)",
+     "kcal": 520,
+     "proteinG": 35,
+     "photo": "2026-11-17-salad"
+    },
+    {
+     "name": "Office lunch plate: pizza slice, sausage, broccolini, Brussels sprouts (~half eaten; cheesecake square untouched)",
+     "kcal": 350,
+     "proteinG": 14,
+     "photo": "2026-11-17-lunchplate"
+    },
+    {
+     "name": "Chocolate soft serve, waffle cone (swirl eaten; cone + inside left)",
+     "kcal": 140,
+     "proteinG": 3,
+     "photo": "2026-11-17-softserve"
+    },
+    {
+     "name": "Hungryroot Lemony Halibut + Broccoli Couscous (1 serving, label)",
+     "kcal": 390,
+     "proteinG": 40,
+     "photo": "2026-11-15-lunch"
+    },
+    {
+     "name": "TRIP Calm drink (355 mL can, label)",
+     "kcal": 35,
+     "proteinG": 0,
+     "time": "9:25 PM",
+     "photo": "2026-11-17-trip"
+    },
+    {
+     "name": "Supplements",
+     "kcal": 20
+    }
+   ]
+  },
+  {
+   "date": "2026-11-16",
+   "weekday": "Mon",
+   "dayType": "Boxing bootcamp day 1",
+   "status": "in-progress",
+   "calories": 1560,
+   "proteinG": 111,
+   "calciumMg": 1141,
+   "calciumNote": null,
+   "fiberG": 12.8,
+   "waterL": 2.68,
+   "fatG": 62.0,
+   "cholesterolMg": 428,
+   "saturatedFatG": 18.1,
+   "notes": "Boxing bootcamp started today (Mon-Fri mornings, ~1 month). 5:20 AM shake: 1/4 serving Transparent Labs Hydrate + 1.5 tsp chia (label) + 1.5 tsp sesame powder + 1 scoop Kaged citrulline + 2 scoops Nutrilite protein (label). During workout: 1 Iron Flask big tumbler water (40 oz, 1.18 L — confirmed). Office breakfast 9:30 AM + 2 cups water (~0.7 L). Andytown latte. Water total ~2.23 L incl. ~0.35 L shake liquid (est.). Lunch (office, ~1:30 PM): 3 slices grilled tofu, ~3/4 cup rice, diced squash, 1 chicken wing, braised meat (only one bite — too salty, rest left). Afternoon: large mug of chai tea (~150 kcal est., same basis as Nov 7 chai). Dinner: Hungryroot Grilled Pork Chop + Steamed Organic Broccoli, 1 serving (label values). Closed Nov 17 with supplements UNCONFIRMED (never confirmed; if taken, add 20 kcal and 300 mg calcium).",
+   "items": [
+    {
+     "name": "Pre-workout protein shake (5:20 AM)",
+     "kcal": 135,
+     "proteinG": 18,
+     "time": "5:20 AM",
+     "photo": "2026-11-16-shake"
+    },
+    {
+     "name": "Office breakfast: scrambled eggs, egg whites, spinach, tots x3, pineapple",
+     "kcal": 315,
+     "proteinG": 22,
+     "time": "9:30 AM",
+     "photo": "2026-11-16-breakfast"
+    },
+    {
+     "name": "Latte (Andytown)",
+     "kcal": 150,
+     "proteinG": 8,
+     "photo": "2026-11-16-latte"
+    },
+    {
+     "name": "Office lunch: grilled tofu x3 slices, rice, squash, chicken wing, braised meat",
+     "kcal": 510,
+     "proteinG": 32,
+     "time": "1:30 PM",
+     "photo": "2026-11-16-lunch"
+    },
+    {
+     "name": "Chai tea, large mug (~16 oz)",
+     "kcal": 150,
+     "proteinG": 4,
+     "time": "5:24 PM"
+    },
+    {
+     "name": "Hungryroot Grilled Pork Chop + Broccoli (1 serving, label)",
+     "kcal": 300,
+     "proteinG": 27,
+     "time": "8:11 PM",
+     "photo": "2026-11-16-dinner"
+    }
+   ]
+  },
+  {
    "date": "2026-11-15",
    "weekday": "Sun",
    "dayType": "Rest day",
-   "status": "in-progress",
-   "calories": 0,
-   "proteinG": 0,
-   "calciumMg": 0,
-   "calciumNote": null,
-   "fiberG": 0,
-   "waterL": 0.59,
-   "fatG": 0,
-   "cholesterolMg": 0,
-   "saturatedFatG": 0,
-   "notes": "Water so far: one full pink bottle (~590 mL, reported via main chat).",
-   "items": []
+   "status": "final",
+   "calories": 1730,
+   "proteinG": 91,
+   "calciumMg": 711,
+   "calciumNote": "incl. Centrum 300 mg",
+   "fiberG": 14.7,
+   "waterL": 1.09,
+   "fatG": 45.0,
+   "cholesterolMg": 331,
+   "saturatedFatG": 13.3,
+   "notes": "Water so far: one full pink bottle (~590 mL, reported via main chat). Breakfast: toast slice + edamame egg bake (1/4 recipe). Supplements confirmed taken (the pill case in the breakfast photo). Lunch: Hungryroot Lemony Halibut + Broccoli Couscous, 1 serving (label values). Dinner (Mr Szechuan): beef noodle soup (ate 2/3 of the bowl), no-sugar watermelon juice, fried bun with condensed milk.",
+   "items": [
+    {
+     "name": "Toast, 1 thick slice",
+     "kcal": 160,
+     "proteinG": 5,
+     "photo": "2026-11-15-breakfast"
+    },
+    {
+     "name": "Edamame egg bake (1/4 recipe)",
+     "kcal": 160,
+     "proteinG": 14,
+     "photo": "2026-11-13-eggbake"
+    },
+    {
+     "name": "Supplements",
+     "kcal": 20,
+     "time": "11:30 AM"
+    },
+    {
+     "name": "Hungryroot Lemony Halibut + Broccoli Couscous (1 serving, label)",
+     "kcal": 390,
+     "proteinG": 40,
+     "time": "1:09 PM",
+     "photo": "2026-11-15-lunch"
+    },
+    {
+     "name": "Beef noodle soup (Mr Szechuan, ate 2/3 bowl)",
+     "kcal": 535,
+     "proteinG": 25,
+     "time": "7:03 PM",
+     "photo": "2026-11-15-dinner"
+    },
+    {
+     "name": "Watermelon juice, no sugar (~500 mL)",
+     "kcal": 140,
+     "proteinG": 2,
+     "photo": "2026-11-15-juice"
+    },
+    {
+     "name": "Fried bun with condensed milk",
+     "kcal": 325,
+     "proteinG": 5
+    }
+   ]
   },
   {
    "date": "2026-11-14",
