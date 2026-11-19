@@ -13,6 +13,73 @@
  },
  "days": [
   {
+   "date": "2026-11-18",
+   "dayType": "Boxing bootcamp day 3",
+   "calories": 2068,
+   "proteinG": 173,
+   "calciumMg": 1056,
+   "fiberG": 18.5,
+   "waterL": 1.2,
+   "fatG": 67.3,
+   "saturatedFatG": 17.3,
+   "cholesterolMg": 599,
+   "notes": "Bootcamp shake 5:20 AM. Office breakfast: egg plate (scrambled eggs, egg whites, spinach, tots x3, pineapple) plus a bowl of congee with 3 small pieces of Chinese sausage and 3 pieces of youtiao (cold morning). Andytown latte. Water so far: shake ~0.35 + congee/latte fluid ~0.5 = ~0.85 L; workout flask not yet reported. Lunch, dinner, supplements pending. She removed 2 of the 3 youtiao pieces before eating (-87 kcal). Lunch (per-item math vs her hand): pork belly skewers x3 ~150 g 650; chicken thigh skewers x2 ~160 g 320; edamame ~55 g shelled 65; roasted mushrooms ~130 g 55; rice ~3/4 cup 155; lunch glass of water ~0.35 L counted. Correction Nov 18: pork plate is 2 skewers / 6 chunks (~120 g), not 3 skewers/9 chunks - belly item corrected 650 -> 550 kcal. Leftovers: pork - only 2 bites of 1 chunk eaten (~45 kcal); chicken - 1 chunk left (~250 eaten); rice ~2 tbsp left (~125 eaten); edamame and mushrooms finished. Dinner at home: her usual chicken meal with extra chicken breast (~250 g total), large baked sweet potato, ~1 cup mixed vegetables. Supplements confirmed taken Nov 18.",
+   "items": [
+    {
+     "name": "Pre-workout protein shake (5:20 AM)",
+     "kcal": 135,
+     "proteinG": 18,
+     "time": "5:20 AM",
+     "photo": "2026-11-16-shake"
+    },
+    {
+     "name": "Office breakfast: scrambled eggs, egg whites, spinach, tots x3, pineapple",
+     "kcal": 300,
+     "proteinG": 21,
+     "photo": "2026-11-18-breakfast"
+    },
+    {
+     "name": "Congee with Chinese sausage x3 pieces + youtiao x1 piece (2 pieces removed)",
+     "kcal": 253,
+     "proteinG": 7,
+     "photo": "2026-11-18-breakfast"
+    },
+    {
+     "name": "Latte (Andytown)",
+     "kcal": 150,
+     "proteinG": 8,
+     "photo": "2026-11-18-latte"
+    },
+    {
+     "name": "Pork belly skewers x2 (only 2 bites of 1 chunk eaten; rest left)",
+     "kcal": 45,
+     "proteinG": 1,
+     "photo": "2026-11-18-lunch"
+    },
+    {
+     "name": "Chicken thigh skewers x2 (1 chunk left)",
+     "kcal": 250,
+     "proteinG": 22
+    },
+    {
+     "name": "Edamame (~55 g shelled, all eaten), roasted mushrooms (~130 g, all eaten), white rice (~3/4 cup, ~2 tbsp left)",
+     "kcal": 245,
+     "proteinG": 12
+    },
+    {
+     "name": "Dinner: chicken breast (~250 g, extra portion), baked sweet potato (~180 g), mixed vegetables (~1 cup)",
+     "kcal": 670,
+     "proteinG": 84,
+     "time": "9:22 PM",
+     "photo": "2026-11-18-dinner"
+    },
+    {
+     "name": "Supplements",
+     "kcal": 20
+    }
+   ]
+  },
+  {
    "date": "2026-11-17",
    "dayType": "Boxing bootcamp day 2",
    "calories": 1905,
