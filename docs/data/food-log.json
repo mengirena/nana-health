@@ -13,6 +13,56 @@
  },
  "days": [
   {
+   "date": "2026-11-19",
+   "dayType": "Boxing bootcamp day 4",
+   "calories": 1264,
+   "proteinG": 85,
+   "calciumMg": 878,
+   "fiberG": 20.0,
+   "waterL": 0.35,
+   "fatG": 62.4,
+   "saturatedFatG": 11.9,
+   "cholesterolMg": 763,
+   "notes": "Shake protein swapped to Truvani Vanilla Protein, 1 scoop (label: 130 kcal, P20, fat 3, fiber 2, Ca 0) - shake total now 189 kcal, P23, Ca 98 (Hydrate/chia/sesame only). Bake: she ate 1/4 (139), not 1/2; husband has the rest. Plus 1 slice toast (90). Dinner: stir-fry of the whole egg tofu tube + 1 large tomato + 6 cremini mushrooms (~326 kcal, chol ~360 from the tofu). Supplements confirmed Nov 19; creatine increased to 4 pills (3 g) today. Water low - only shake ~0.35 L reported.",
+   "items": [
+    {
+     "name": "Pre-workout protein shake (5:20 AM, Truvani Vanilla Protein 1 scoop - label)",
+     "kcal": 189,
+     "proteinG": 23,
+     "time": "5:20 AM",
+     "photo": "2026-11-16-shake"
+    },
+    {
+     "name": "Broccoli egg bake (1/4 of whole bake)",
+     "kcal": 139,
+     "proteinG": 14,
+     "photo": "2026-11-19-breakfast-plate"
+    },
+    {
+     "name": "Toast, 1 slice",
+     "kcal": 90,
+     "proteinG": 3,
+     "photo": "2026-11-19-breakfast-plate"
+    },
+    {
+     "name": "Lunch: Hungryroot Shrimp + Asparagus Pesto Linguine, 1 serving (recipe label)",
+     "kcal": 500,
+     "proteinG": 30,
+     "photo": "2026-11-19-lunch"
+    },
+    {
+     "name": "Dinner: stir-fried egg tofu (whole tube ~240 g) + tomato (1 large) + cremini mushrooms (6), ~1 tbsp oil",
+     "kcal": 326,
+     "proteinG": 15,
+     "time": "6:17 PM"
+    },
+    {
+     "name": "Supplements (creatine increased to 4 pills today)",
+     "kcal": 20
+    }
+   ]
+  },
+  {
    "date": "2026-11-18",
    "dayType": "Boxing bootcamp day 3",
    "calories": 2068,
